@@ -3,9 +3,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebAppResit.Models;
 
-public class BookItems
-{
-    public class Books
+
+    public class BookItem
     {
         [Key]
         [StringLength(13, MinimumLength = 10)] // ISBN-10 or ISBN-13
@@ -25,4 +24,3 @@ public class BookItems
         public Nullable<decimal> Price { get; set; }
         
     }
-}
