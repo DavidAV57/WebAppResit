@@ -1,0 +1,59 @@
+@page
+@model WebAppResit.Menu.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>BookItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="BookItem.ISBN" class="control-label"></label>
+                <input asp-for="BookItem.ISBN" class="form-control" />
+                <span asp-validation-for="BookItem.ISBN" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookItem.ItemName" class="control-label"></label>
+                <input asp-for="BookItem.ItemName" class="form-control" />
+                <span asp-validation-for="BookItem.ItemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookItem.Item_desc" class="control-label"></label>
+                <input asp-for="BookItem.Item_desc" class="form-control" />
+                <span asp-validation-for="BookItem.Item_desc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookItem.Author" class="control-label"></label>
+                <input asp-for="BookItem.Author" class="form-control" />
+                <span asp-validation-for="BookItem.Author" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookItem.Available" class="control-label"></label>
+                <input asp-for="BookItem.Available" class="form-control" />
+                <span asp-validation-for="BookItem.Available" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BookItem.Price" class="control-label"></label>
+                <input asp-for="BookItem.Price" class="form-control" />
+                <span asp-validation-for="BookItem.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

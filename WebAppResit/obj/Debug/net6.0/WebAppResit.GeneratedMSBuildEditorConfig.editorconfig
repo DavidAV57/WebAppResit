@@ -18,6 +18,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\davin\source\repos\WebAppResit\WebAppResit
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/davin/source/repos/WebAppResit/WebAppResit/Menu/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TWVudVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davin/source/repos/WebAppResit/WebAppResit/Menu/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TWVudVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davin/source/repos/WebAppResit/WebAppResit/Menu/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TWVudVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davin/source/repos/WebAppResit/WebAppResit/Menu/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TWVudVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/davin/source/repos/WebAppResit/WebAppResit/Menu/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = TWVudVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/davin/source/repos/WebAppResit/WebAppResit/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

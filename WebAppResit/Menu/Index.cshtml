@@ -1,0 +1,60 @@
+@page
+@model WebAppResit.Menu.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookItem[0].ItemName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookItem[0].Item_desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookItem[0].Author)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookItem[0].Available)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookItem[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.BookItem) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ItemName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Item_desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Author)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Available)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ISBN">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ISBN">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ISBN">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
