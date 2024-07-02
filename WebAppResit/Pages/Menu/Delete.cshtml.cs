@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAppResit.Data;
 using WebAppResit.Models;
 
-namespace WebAppResit.Menu
+namespace WebAppResit.Pages.Menu
 {
     public class DeleteModel : PageModel
     {
@@ -24,12 +24,12 @@ namespace WebAppResit.Menu
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
-            if (id == null || _context.BookItem == null)
+            if (id == null || _context.BookItems == null)
             {
                 return NotFound();
             }
 
-            var bookitem = await _context.BookItem.FirstOrDefaultAsync(m => m.ISBN == id);
+            var bookitem = await _context.BookItems.FirstOrDefaultAsync(m => m.ISBN == id);
 
             if (bookitem == null)
             {
@@ -44,16 +44,16 @@ namespace WebAppResit.Menu
 
         public async Task<IActionResult> OnPostAsync(string id)
         {
-            if (id == null || _context.BookItem == null)
+            if (id == null || _context.BookItems == null)
             {
                 return NotFound();
             }
-            var bookitem = await _context.BookItem.FindAsync(id);
+            var bookitem = await _context.BookItems.FindAsync(id);
 
             if (bookitem != null)
             {
                 BookItem = bookitem;
-                _context.BookItem.Remove(BookItem);
+                _context.BookItems.Remove(BookItem);
                 await _context.SaveChangesAsync();
             }
 

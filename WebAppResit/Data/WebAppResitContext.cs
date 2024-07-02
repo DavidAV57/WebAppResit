@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using WebAppResit.Models;
 
@@ -9,11 +5,16 @@ namespace WebAppResit.Data
 {
     public class WebAppResitContext : DbContext
     {
-        public WebAppResitContext (DbContextOptions<WebAppResitContext> options)
+        public WebAppResitContext(DbContextOptions<WebAppResitContext> options)
             : base(options)
         {
         }
+        
+        public DbSet<BookItem> BookItems { get; set; }
 
-        public DbSet<WebAppResit.Models.BookItem> BookItem { get; set; } = default!;
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<BookItem>().ToTable("BookItem");
+        }
     }
 }

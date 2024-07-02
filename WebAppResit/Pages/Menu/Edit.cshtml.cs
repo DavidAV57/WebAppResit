@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAppResit.Data;
 using WebAppResit.Models;
 
-namespace WebAppResit.Menu
+namespace WebAppResit.Pages.Menu
 {
     public class EditModel : PageModel
     {
@@ -25,12 +25,12 @@ namespace WebAppResit.Menu
 
         public async Task<IActionResult> OnGetAsync(string id)
         {
-            if (id == null || _context.BookItem == null)
+            if (id == null || _context.BookItems == null)
             {
                 return NotFound();
             }
 
-            var bookitem =  await _context.BookItem.FirstOrDefaultAsync(m => m.ISBN == id);
+            var bookitem =  await _context.BookItems.FirstOrDefaultAsync(m => m.ISBN == id);
             if (bookitem == null)
             {
                 return NotFound();
@@ -71,7 +71,7 @@ namespace WebAppResit.Menu
 
         private bool BookItemExists(string id)
         {
-          return _context.BookItem.Any(e => e.ISBN == id);
+          return _context.BookItems.Any(e => e.ISBN == id);
         }
     }
 }

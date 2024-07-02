@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using WebAppResit.Data;
 
 namespace WebAppResit.Pages
 {
@@ -12,6 +13,7 @@ namespace WebAppResit.Pages
             _logger = logger;
         }
 
+        private readonly WebAppResitContext _db;
         public void OnGet()
         {
 

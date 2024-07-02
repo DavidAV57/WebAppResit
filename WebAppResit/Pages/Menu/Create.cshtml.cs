@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using WebAppResit.Data;
 using WebAppResit.Models;
 
-namespace WebAppResit.Menu
+namespace WebAppResit.Pages.Menu
 {
     public class CreateModel : PageModel
     {
@@ -36,7 +36,7 @@ namespace WebAppResit.Menu
                 return Page();
             }
 
-            _context.BookItem.Add(BookItem);
+            _context.BookItems.Add(BookItem);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

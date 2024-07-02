@@ -1,26 +1,28 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace WebAppResit.Models;
-
-
+namespace WebAppResit.Models
+{
     public class BookItem
     {
         [Key]
-        [StringLength(13, MinimumLength = 10)] // ISBN-10 or ISBN-13
+        [StringLength(13, MinimumLength = 10)]
         public string ISBN { get; set; }
 
-        [StringLength(30)]
+        [StringLength(255)]
         public string ItemName { get; set; }
 
-        [StringLength(255)]
+        [StringLength(1024)]
         public string Item_desc { get; set; }
-        [StringLength(40)]
+
+        [StringLength(50)]
         public string Author { get; set; }
-            
-        public Nullable<bool> Available { get; set; }
+
+        public bool? Available { get; set; }
+
         [DataType(DataType.Currency)]
         [Column(TypeName = "Money")]
-        public Nullable<decimal> Price { get; set; }
-        
+        public decimal? Price { get; set; }
     }
+}

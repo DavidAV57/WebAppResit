@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using WebAppResit.Data;
 using WebAppResit.Models;
 
-namespace WebAppResit.Menu
+namespace WebAppResit.Pages.Menu
 {
     public class IndexModel : PageModel
     {
@@ -23,9 +23,9 @@ namespace WebAppResit.Menu
 
         public async Task OnGetAsync()
         {
-            if (_context.BookItem != null)
+            if (_context.BookItems != null)
             {
-                BookItem = await _context.BookItem.ToListAsync();
+                BookItem = await _context.BookItems.ToListAsync();
             }
         }
     }
