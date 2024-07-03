@@ -24,5 +24,7 @@ namespace WebAppResit.Models
         [DataType(DataType.Currency)]
         [Column(TypeName = "Money")]
         public decimal? Price { get; set; }
+        public string ImageDescription { get; set; }
+        public byte[] ImageData { get; set; }
     }
 }

@@ -2,9 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using Microsoft.Extensions.DependencyInjection;
 using WebAppResit.Data;
+using Microsoft.AspNetCore.Identity;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<WebAppResitContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("WebAppResitContext") ?? throw new InvalidOperationException("Connection string 'WebAppResitContext' not found.")));
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<WebAppResitContext>();
 
 // Add services to the container.
 

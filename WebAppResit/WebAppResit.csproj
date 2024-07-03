@@ -7,6 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.31" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.29" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.29" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.31" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.31">
       <PrivateAssets>all</PrivateAssets>
@@ -23,15 +25,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <AdditionalFiles Include="Pages\Menu\Create.cshtml" />
-    <AdditionalFiles Include="Pages\Menu\Delete.cshtml" />
-    <AdditionalFiles Include="Pages\Menu\Details.cshtml" />
-    <AdditionalFiles Include="Pages\Menu\Edit.cshtml" />
-    <AdditionalFiles Include="Pages\Menu\Index.cshtml" />
+    <AdditionalFiles Include="Pages\BookList\Create.cshtml" />
+    <AdditionalFiles Include="Pages\BookList\Delete.cshtml" />
+    <AdditionalFiles Include="Pages\BookList\Details.cshtml" />
+    <AdditionalFiles Include="Pages\BookList\Edit.cshtml" />
+    <AdditionalFiles Include="Pages\BookList\Index.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Pages\Menu\" />
+    <Folder Include="Pages\BookList\" />
   </ItemGroup>
 
 </Project>

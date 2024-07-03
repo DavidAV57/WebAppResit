@@ -1,4 +1,5 @@
 ﻿@page
+@using WebAppResit.Models
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -8,3 +9,48 @@
     <h1 class="display-4">Welcome to SnowCone Bookstore</h1>
     <p>Bookstore homepage.</p>
 </div>
+@*<div class="text-center">
+    <h2 class="display-4"> Our Book Collection </h2>
+    <table>
+        <thead>
+        <tr>
+            <th>ISBN</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Author</th>
+            <th>Price</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var tblBookItem in Model.BookItems)
+        {
+            <td>@tblBookItem.ISBN</td>
+            <td>@tblBookItem.ItemName</td>
+            <td>@tblBookItem.Item_desc</td>
+            <td>@tblBookItem.Author</td>
+            <td>@tblBookItem.Price</td>
+
+        }
+        </tbody>
+    </table>*@
+<div class="flex-container">
+    @foreach (var tblBookItem in Model.BookItems)
+    {
+        <div>
+            <p>@Html.DisplayFor(modelItem => tblBookItem.ItemName)</p>
+            <p>@Html.DisplayFor(modelItem => tblBookItem.Author)</p>
+            <p>@Html.DisplayFor(modelItem => tblBookItem.Price)</p>
+            <p>@Html.DisplayFor(modelItem => tblBookItem.Item_desc)</p>
+            <p>@Html.DisplayFor(modelItem => tblBookItem.ImageData)</p>
+                
+        </div>
+    }
+    
+</div>
+<h2>Search</h2>
+<form method="post">
+    <div>Search <input asp-for="Search" /></div>
+    <button type="submit" asp-page-handler="Search">Submit</button>
+</form>
+
+@*</div>*@

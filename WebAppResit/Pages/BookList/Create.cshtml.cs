@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Binders;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebAppResit.Data;
@@ -36,6 +37,15 @@ namespace WebAppResit.Pages.Menu
                 return Page();
             }
 
+            foreach (var file in Request.Form.Files)
+            {
+                MemoryStream ms = new MemoryStream();
+                file.CopyTo(ms);
+                BookItem.ImageData = ms.ToArray();
+                
+                ms.Close();
+                ms.Dispose();
+            }
             _context.BookItems.Add(BookItem);
             await _context.SaveChangesAsync();
 

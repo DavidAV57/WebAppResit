@@ -1,4 +1,5 @@
 @page
+@using System.Drawing
 @model WebAppResit.Pages.Menu.IndexModel
 
 @{
@@ -29,7 +30,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.BookItem[0].Price)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookItem[0].ImageData)
+            </th>
         </tr>
     </thead>
     <tbody>
@@ -55,6 +58,21 @@
                 <a asp-page="./Details" asp-route-id="@item.ISBN">Details</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ISBN">Delete</a>
             </td>
+            @{
+                try
+                {
+                    <td>
+                        <img src="@string.Format("data:image/jpg:base64,{0}", Convert.ToBase64String(item.ImageData))" alt="@item.ImageDescription"/>
+                    </td>
+
+                }
+                catch
+                {
+                    <td>
+                        <img class="img-thumb" src="/Images/no-image.png" alt="No Image Provided" />
+                    </td>
+                }
+            }
         </tr>
 }
     </tbody>

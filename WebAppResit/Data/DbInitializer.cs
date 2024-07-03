@@ -46,7 +46,7 @@ namespace WebAppResit.Data
                 new BookItem()
                 {
                     ISBN = "9781473620308",
-                    ItemName = "Word Play: A cornucopia of puns, anagrams and other contortions...",
+                    ItemName = "Word Play: A cornucopia of puns, anagrams and other contortions and curiosities of the English language",
                     Item_desc = "'No matter how eloquently a dog may bark, he cannot tell you that his parents were poor but honest.' Only words can do that. Words are magic. Words are fun. Join Gyles Brandreth - wit and word-meister, Just A Minute regular, One Show reporter, denizen of Countdown's Dictionary Corner, founder of the National Scrabble Championships, patron of The Queen's English Society, QI, Room 101, Have I Got News For You and Pointless survivor - on an uproarious and unexpected magic carpet ride around the awesome world of words and wordplay. Puns, palindromes, pangrams, Malaprops, euphemisms, mnemonics, acronyms, anagrams, alphabeticals, Tweets, verbiage, verbarrhea - if you can name it, you should find it here, along with the longest, shortest, wittiest, wildest, oldest, latest, oddest, most interesting and most memorable words in the English language - the richest, most remarkable language ever known",
                     Author = "Gyles Brandreth",
                     Available = true,
