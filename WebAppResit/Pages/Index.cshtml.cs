@@ -3,9 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using WebAppResit.Data;
 using WebAppResit.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 namespace WebAppResit.Pages
 {
+    [Authorize (Roles ="Admin   ,Member")]
     public class IndexModel : PageModel
     {
         /*private readonly ILogger<IndexModel> _logger;
@@ -15,7 +18,7 @@ namespace WebAppResit.Pages
             _logger = logger;
         }*/
         private readonly WebAppResitContext _context;
-
+        
         public IndexModel(WebAppResitContext context)
         {
             _context = context;

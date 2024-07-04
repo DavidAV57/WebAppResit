@@ -9,12 +9,18 @@ namespace WebAppResit.Data
             : base(options)
         {
         }
-        
-        public DbSet<BookItem> BookItems { get; set; }
 
+        public DbSet<BookItem> BookItems { get; set; } = default!;
+        public DbSet<CheckoutCustomer> CheckoutCustomers { get; set; } = default!;
+        public DbSet<Basket> Baskets { get; set; } = default!;
+        public DbSet<BasketItem> BasketItems { get; set; } = default!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<BookItem>().ToTable("BookItem");
+
+            modelBuilder.Entity<BasketItem>().HasKey(t => new { t.StockID, t.BasketID });
         }
+        
     }
 }

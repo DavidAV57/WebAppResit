@@ -1,14 +1,17 @@
 @page
 @using System.Drawing
-@model WebAppResit.Pages.Menu.IndexModel
+@using Microsoft.AspNetCore.Identity
+@model WebAppResit.Pages.BookList.IndexModel
 
 @{
     ViewData["Title"] = "Index";
+
     Layout = "~/Pages/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
-
+@*
+<h1>Admin Pages</h1>
+<p>These pages require Admin to access</p>*@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
@@ -53,26 +56,33 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ISBN">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ISBN">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ISBN">Delete</a>
-            </td>
             @{
-                try
-                {
-                    <td>
-                        <img src="@string.Format("data:image/jpg:base64,{0}", Convert.ToBase64String(item.ImageData))" alt="@item.ImageDescription"/>
-                    </td>
+            try
+            {
+            <td>
+                <img src="@string.Format("data:image/jpg:base64,{0}", Convert.ToBase64String(item.ImageData))" alt="@item.ImageDescription"/>
+            </td>
 
-                }
-                catch
+            }
+            catch
                 {
                     <td>
                         <img class="img-thumb" src="/Images/no-image.png" alt="No Image Provided" />
                     </td>
                 }
             }
+            <td>
+                <form method="post" asp-page-handler="Buy">
+                    <input type="hidden" name="itemISBN" value="@item.ISBN" />
+                    <button type="submit">Add to Basket</button>
+                </form>
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ISBN">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ISBN">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ISBN">Delete</a>
+            </td>
+            
         </tr>
 }
     </tbody>

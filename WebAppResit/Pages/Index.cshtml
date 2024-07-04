@@ -3,11 +3,15 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    var inMemberRole = User.IsInRole("Member");
+    var inAdminRole = User.IsInRole("Admin");
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome to SnowCone Bookstore</h1>
     <p>Bookstore homepage.</p>
+    <p>Is Admin: @inAdminRole</p>
+    <p>Is Member: @inMemberRole</p>
 </div>
 @*<div class="text-center">
     <h2 class="display-4"> Our Book Collection </h2>
