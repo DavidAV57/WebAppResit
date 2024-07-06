@@ -53,5 +53,23 @@ namespace WebAppResit.Models
         [Required]
         public int Quantity { get; set; }
     }
+    public class OrderItem
+    {
+        [Required]
+        public int OrderNo { get; set; }
+
+        [Required]
+        public string OrderID { get; set; }
+
+        [Required]
+        public int Quantity { get; set; }
+    }
+    
+    
+    public class OrderHistory
+    {
+        [Key, Required] public int OrderNo { get; set; }
+        [Required] public string Email {get; set;}
+    }
     
 }

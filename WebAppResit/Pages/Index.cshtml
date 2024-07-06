@@ -41,12 +41,13 @@
     @foreach (var tblBookItem in Model.BookItems)
     {
         <div>
+            <p>@Html.DisplayFor(modelItem =>tblBookItem.ISBN)</p>
             <p>@Html.DisplayFor(modelItem => tblBookItem.ItemName)</p>
             <p>@Html.DisplayFor(modelItem => tblBookItem.Author)</p>
             <p>@Html.DisplayFor(modelItem => tblBookItem.Price)</p>
             <p>@Html.DisplayFor(modelItem => tblBookItem.Item_desc)</p>
             <p>@Html.DisplayFor(modelItem => tblBookItem.ImageData)</p>
-                
+
         </div>
     }
     

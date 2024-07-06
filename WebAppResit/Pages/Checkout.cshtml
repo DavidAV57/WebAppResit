@@ -1,0 +1,43 @@
+﻿@page
+@model WebAppResit.Pages.CheckoutModel
+
+@{
+    ViewData["Title"] = "SnowCone Checkout";
+}
+@using WebAppResit.Data
+@using Microsoft.Extensions.Options
+<h1>SnowCone Checkout</h1>
+@if (Model.Items.Count == 0)
+{
+    <p>You do not have any items in your basket. Please revisit the BookList and make a selection.</p>
+}
+else
+{
+    <form method="post">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quality</th>
+                <th>Subtotal</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach (var item in Model.Items)
+            {
+                var subtotal = item.Price * item.Quantity;
+                
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.Price.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>@subtotal.ToString("C")</td>
+                </tr>
+            }
+            </tbody>
+            <h2>Order Total: @Model.Total.ToString("C")</h2>
+            <button type="submit" asp-page-handler="Buy">Buy</button>
+        </table>
+    </form>
+}
