@@ -35,6 +35,11 @@
         }
         </tbody>
     </table>*@
+<h2>Search</h2>
+<form method="post">
+    <div>Search <input asp-for="Search" /></div>
+    <button type="submit" asp-page-handler="Search">Submit</button>
+</form>
 <div class="flex-container">
     @foreach (var tblBookItem in Model.BookItems)
     {
@@ -50,10 +55,6 @@
     }
     
 </div>
-<h2>Search</h2>
-<form method="post">
-    <div>Search <input asp-for="Search" /></div>
-    <button type="submit" asp-page-handler="Search">Submit</button>
-</form>
+
 
 @*</div>*@

@@ -37,7 +37,7 @@ body {
 }
 .flex-container > div:hover{
   background-color: gold;
-  color: FFFDD0;
+  color: #FFFDD0;
 }
 .footer{
   background-color: #353d3b;
