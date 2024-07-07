@@ -77,13 +77,16 @@
                     <button type="submit">Add to Basket</button>
                 </form>
             </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.ISBN">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ISBN">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ISBN">Delete</a>
-            </td>
-            
-        </tr>
+            @if (User.IsInRole("Admin"))
+            {
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.ISBN">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.ISBN">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.ISBN">Delete</a>
+                </td>
+            }
+
+    </tr>
 }
     </tbody>
 </table>

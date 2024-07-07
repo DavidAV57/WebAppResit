@@ -59,7 +59,7 @@ namespace WebAppResit.Models
         public int OrderNo { get; set; }
 
         [Required]
-        public string OrderID { get; set; }
+        public string StockID { get; set; }
 
         [Required]
         public int Quantity { get; set; }
@@ -71,5 +71,7 @@ namespace WebAppResit.Models
         [Key, Required] public int OrderNo { get; set; }
         [Required] public string Email {get; set;}
     }
+
+    
     
 }

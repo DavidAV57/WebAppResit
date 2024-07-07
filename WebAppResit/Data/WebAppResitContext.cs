@@ -2,6 +2,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WebAppResit.Models;
+using ContactModel = WebAppResit.Pages.ContactModel;
+
 namespace WebAppResit.Data
 {
     public class WebAppResitContext : IdentityDbContext
@@ -17,15 +19,15 @@ namespace WebAppResit.Data
         public DbSet<BasketItem> BasketItems { get; set; } = default!;
         public DbSet<OrderHistory> OrderHistories { get; set; } = default!;
         public DbSet<OrderItem> OrderItems { get; set;} = default!;
-        
-        
+
+        public DbSet<ContactForm> ContactForm { get; set; } = default!;
         [NotMapped] 
         public DbSet<CheckoutItem> CheckoutItems { get; set; } = default!;
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<BookItem>().ToTable("BookItem");
-            modelBuilder.Entity<OrderItem>().HasKey(o => new { o.OrderNo, o.OrderID });
+            modelBuilder.Entity<OrderItem>().HasKey(o => new { o.OrderNo, o.StockID });
             modelBuilder.Entity<BasketItem>().HasKey(t => new { t.StockID, t.BasketID });
         }
         

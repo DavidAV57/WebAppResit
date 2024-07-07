@@ -32,8 +32,4 @@
     <AdditionalFiles Include="Pages\BookList\Index.cshtml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\BookList\" />
-  </ItemGroup>
-
 </Project>
