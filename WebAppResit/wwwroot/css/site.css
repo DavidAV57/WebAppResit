@@ -15,6 +15,7 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #FFFDD0;
 }
 .flex-container{
   display: flex;
@@ -23,7 +24,7 @@ body {
   justify-content: center;
 }
 .flex-container > div{
-  background-color: skyblue;
+  background-color: #FFFDD0;
   border-radius: 5px;
   width: 300px;
   margin: 10px;
@@ -36,5 +37,11 @@ body {
 }
 .flex-container > div:hover{
   background-color: gold;
-  color: white;
+  color: FFFDD0;
+}
+.footer{
+  background-color: #353d3b;
+}
+.header{
+  background-color: #353d3b;
 }

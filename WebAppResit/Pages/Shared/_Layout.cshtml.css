@@ -13,22 +13,22 @@ a {
 }
 
 .btn-primary {
-  color: #fff;
+  color: #FFFDD0;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
+  color: #FFFDD0;
   background-color: #1b6ec2;
   border-color: #1861ac;
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #353d3b;
 }
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #353d3b;
 }
 
 .box-shadow {
@@ -41,9 +41,13 @@ button.accept-policy {
 }
 
 .footer {
+  background-color: #353d3b;
   position: absolute;
   bottom: 0;
   width: 100%;
   white-space: nowrap;
   line-height: 60px;
+}
+.header{
+  background-color: #353d3b;
 }
